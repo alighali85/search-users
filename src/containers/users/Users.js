@@ -42,8 +42,8 @@ export default function Users() {
             <h5>Search</h5>
             <SearchField onChange={handleOnSearch}/> <br/>
             <h5>Results</h5>
-            {loading ? <p>Loading ...</p> : <UsersList onItemClick={toggleUserDetails} users={filteredUsers || users}/>}
             {filteredUsers?.length === 0 && <span className="highlighted">No results</span>}
+            {loading ? <p>Loading ...</p> : <UsersList onItemClick={toggleUserDetails} users={filteredUsers || users}/>}
         </div>
             {userDetails && <Modal onClose={() => toggleUserDetails(false)}>
                 <UserDetails user={userDetails}/>
